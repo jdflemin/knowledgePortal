@@ -1,0 +1,49 @@
+.wrap{
+  z-index: 1000;
+  width: 100%;
+  height: 64px;
+  background-color: rgba(244,244,236,0.5);
+  position: fixed;
+}
+
+#nav1{
+  margin-top: 17px;
+}
+
+#nav2{
+margin-top: 17px;
+margin: 0px;
+padding: 0px;
+  #knowledge{
+  width: 80%;
+  height: 80%;
+  }
+}
+
+#nav3{
+  border: 0px;
+  margin-top: 17px;
+  #search{
+    border: 0px;
+    width: 50%;
+    height: 35px;
+    border-radius: 5px;
+    #searcButton{
+      border: 0px;
+    }
+  }
+}
+
+#nav4{
+    .adminButton{
+      border: none;
+      position: relative;
+      z-index: 1000;
+      background: rgba(241,8,43,1);
+      margin-top: 17px;
+      border: 5px rgba(241,8,43,1) solid;
+      box-shadow: 5px 5px 2px #ccc;
+      border-radius: 5px;
+      font-family: 'Merriweather', serif;
+     }
+}

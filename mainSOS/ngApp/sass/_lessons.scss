@@ -1,0 +1,108 @@
+.headerTitle{
+  font-family: 'Patua One', cursive;
+  border: 1px black solid;
+  text-align: center;
+  background-color: rgba(83,211,246,0.6);
+  padding: 20px;
+  font-size: 2.5em;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px #ccc;
+}
+
+.lessonList{
+  list-style-type: none;
+}
+
+.eachLesson{
+  .col-xs-8:hover{
+    background-color: rgb(83,211,246);
+  }
+}
+
+.eachLesson{
+  margin: 5px;
+  padding: 25px;
+  font-size: 1.5em;
+  font-family: 'Patua One', cursive;
+  .col-xs-8{
+    background-color: rgba(83,211,246,0.2);
+    padding: 5px;
+    border: 1px black solid;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px #ccc;
+    #leanpub{
+      padding-right: 20px;
+      cursor: pointer;
+    }
+  }
+  #pencilLesson{
+    margin-left: 40px;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: rgba(180,184,185,0.8);
+    cursor: pointer;
+    box-shadow: 3px 3px 2px #ccc;
+  }
+  #trashLesson{
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: rgba(241,8,43,0.8);
+    cursor: pointer;
+    box-shadow: 3px 3px 2px #ccc;
+  }
+}
+
+#pencilLesson:hover{
+  padding: 10px;
+  box-shadow: 4px 4px 2px #ccc;
+}
+
+#trashLesson:hover{
+  padding: 10px;
+  box-shadow: 4px 4px 2px #ccc;
+}
+
+.addLesson{ //add courses and lessons
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  background-color: transparent;
+}
+
+
+
+
+
+.trending{        //main div
+  position: fixed;
+  width: 20%;
+  border: 2px solid black;
+  height: 500px;
+  background-color: white;
+}
+
+.trendingIn{       //div for trending in what
+
+}
+
+.trendingUL{      //ul for trending list
+
+}
+
+.trendingLI{       //trending list items
+  list-style: lower-roman;
+  padding: calc(100%/80);
+  border-bottom: 2px solid black;
+  width: calc(100%/1.2);
+  margin: calc(100%/95);
+}
+
+.trendingTitle{    //h4 trending title
+  position: center;
+  border: 2px solid black;
+  width: calc(100%/1.75);
+  margin-left: calc(100%/4);
+  padding: calc(100%/55);
+}

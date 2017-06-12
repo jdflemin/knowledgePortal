@@ -1,0 +1,45 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<div class="row" id="courseDirectory">
+  <div class="wrapper">
+    <div class="col-xs-12">
+      <ul class="coursesList">
+        <li class="eachCourse"  ng-repeat="course in controller.courses">
+          <div class="card">
+            {{course.name}}
+              <i class="fa fa-pencil aOnlyAgain" aria-hidden="true" ng-click="controller.showEditModalCourse(course)"></i>
+            <div class="cardBottom">
+              <i class="fa fa-trash aOnly" aria-hidden="true" ng-click="controller.delete(course)"></i>
+              <label class="switch">
+                <input type="checkbox" ng-checked={{course.isEnabled}}>
+                <div class="slider round" ng-click="controller.courseActivation(course)"></div>
+              </label>
+              <i class="fa fa-book" aria-hidden="true" ng-click="controller.redirectToLessons(course._id)"></i>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<br>
+<hr>
+<br>
+<div class="row">
+  <div class="col-xs-12">
+    <input id="addCourse" type="text" ng-model="controller.newCourse.name" placeholder="Add New Course Here">
+    <button class="addLesson">
+    <i class="fa fa-plus-square" id="addCourseButton" aria-hidden="true" ng-click="controller.addCourse()"></i>
+    </button>
+  </div>
+</div>
+
+
+
+<!-- NOTE: ng-if="course.isEnabled" -->

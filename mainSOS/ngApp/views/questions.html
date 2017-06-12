@@ -1,0 +1,45 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="row">
+  <div class="col-xs-9">
+    <div class="row">
+      <div class="col-xs-1"></div>
+        <div class="col-xs-10" id="lessonTitle">
+          <h1 class="lessonTitleH1">Lesson: {{controller.lesson.title}}</h1>
+        </div>
+      <div class="col-xs-1"></div>
+    </div>
+    <div class="row">
+      <ul class="questionList"ng-repeat="question in controller.questions">
+        <li class="eachQuestion">
+          <div class="col-xs-2">
+            <i class="fa fa-sort-asc fa-xl" id="upArrow" ng-click="controller.countUpTick(question)"></i><br>
+            {{question.clickCount}}
+          </div>
+          <div class="col-xs-9" id="theQuestion">
+            <div>
+              <i class="fa fa-file" aria-hidden="true" id="fileFile" ng-click="controller.redirectToAnswers(question._id)"></i>
+              {{question.qTitle}}
+              <br>
+                <span class="answerTime">{{question.qDate | date:'medium'}}<span>
+                </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="askQuestion">
+      <form>
+        <input type="text" class="newQuestionTitle" placeholder="Question Title" ng-model="controller.newQuestion.qTitle">
+        <input type="text" class="newQuestionBody" placeholder="code link" rows="1" cols="100" ng-model="controller.newQuestion.qCodeLink">
+        <textarea type="text" class="newQuestionBody" placeholder="Question Body" rows="10" cols="100" ng-model="controller.newQuestion.qContent"></textarea>
+        <button type="button" class="questionButton" ng-click="controller.addQuestions()">Ask</button>
+      </form>
+    </div>
+  </div>
+</div>

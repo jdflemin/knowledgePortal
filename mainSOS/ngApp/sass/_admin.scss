@@ -1,0 +1,17 @@
+.button {
+  display: inline-block;
+  text-decoration: none;
+  font-family: "helvetica";
+  font-size: 12px;
+  font-weight: 200;
+  background: #ccc;
+  color: #222;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: all .3s;
+  float: right;
+  margin: 0 10px;
+}
+.button:hover {
+  background: #bbb;
+}

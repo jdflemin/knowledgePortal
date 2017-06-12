@@ -1,0 +1,12 @@
+body {
+  background-image: url("/background.jpg");
+  background-repeat: repeat;
+}
+
+@import "header";
+@import "dropdown";
+@import "home";
+@import "lessons";
+@import "questions";
+@import "answers";
+@import "admin";

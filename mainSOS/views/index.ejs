@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html ng-app="mainsos">
+
+<head>
+  <title>mainsos</title>
+  <meta charset="utf-8">
+  <base href="/" />
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"> <!-- NOTE:font-family 'Merriweather', serif; -->
+  <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet"> <!-- NOTE:font-family: 'Patua One', cursive;  -->
+  <link rel="stylesheet" href="/ngApp/css/main.css"/>
+</head>
+
+<body>
+
+        <div class="row">
+          <div class="wrap">
+
+              <div class="col-xs-1" id="nav1">
+                <div class="outBox">
+                  <div class="inBox">
+                    <i class="fa fa-bars fa-2x" id="dropDownMenu" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-5" id="nav2">
+                <div class="knowledge">
+                  <img id="knowledge" src="Knowledge.png" alt="knowledge">
+                </div>
+              </div>
+
+              <div class="col-xs-5" id="nav3">
+                <div class="">
+                  <form action="index.html" method="post" ng-controller="indexController as controller">
+                    <input type="text" id="search" ng-model="controller.searchString" placeholder="Search..." />
+                    <i id="searchButton" ng-click="controller.goToSearch()" class="fa fa-search fa-lg" aria-hidden="true"></i>
+                  </form>
+                </div>
+              </div>
+
+              <div class="col-xs-1" id="nav4">
+                <div class="admin">
+                  <button class="adminButton" ng-controller="indexController as controller" ng-click="controller.openAdminModal()">Admin</button>
+                </div>
+              </div>
+
+          </div>
+        </div>
+
+<!-- NOTE: STILL WORK ON DROPWDOWN MENU STYLE -->
+        <div id="dropDownContents" ng-controller="indexController as controller">
+          <ul id="courses">
+            <li class="dropdown" id='home'><div class="dropdownitem">
+              <a href="/" class="idLink">
+                <img class="rounded" src="/smoothsquare.png" />
+                  <p class="roundeditem">
+                    Home
+                  </p>
+              </a>
+            </div></li>
+            <li class="dropdown" ng-repeat="course in controller.courses"><div class="dropdownitem">
+              <img class="rounded" src="/smoothsquare.png" />
+                <p class="roundeditem">
+                  {{course.name}}
+                </p>
+            </div></li>
+          </ul>
+        </div>
+
+
+      <ui-view></ui-view>
+
+  <script src="/bower_components/angular/angular.min.js"></script>
+  <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="/bower_components/angular-resource/angular-resource.min.js"></script>
+  <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
+  <script src="/bower_components/angular-touch/angular-touch.min.js"></script>
+  <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+
+  <script src="/ngApp/UIfunctions/UIfunctions.js"></script>
+  <script src="/ngApp/UIfunctions/commentstoggle.js"></script>
+  <script src="/ngApp/app.js"></script>
+
+  <script src="/ngApp/controllers/adminController.js"></script>
+  <script src="/ngApp/controllers/homeController.js"></script>
+  <script src="/ngApp/controllers/indexController.js"></script>
+  <script src="/ngApp/controllers/lessonController.js"></script>
+  <script src="/ngApp/controllers/answerController.js"></script>
+  <script src="/ngApp/controllers/questionController.js"></script>
+  <script src="/ngApp/controllers/adminAnswerController.js"></script>
+  <script src="/ngApp/controllers/adminCourseController.js"></script>
+  <script src="/ngApp/controllers/adminLessonController.js"></script>
+  <script src="/ngApp/controllers/adminQuestionController.js"></script>
+  <script src="/ngApp/controllers/searchController.js"></script>
+
+  <script src="/ngApp/controllers/modalController.js"></script>
+
+  <script src="/ngApp/services/answerService.js"></script>
+  <script src="/ngApp/services/commentService.js"></script>
+  <script src="/ngApp/services/courseService.js"></script>
+  <script src="/ngApp/services/lessonService.js"></script>
+  <script src="/ngApp/services/questionService.js"></script>
+
+
+  <script src="/ngApp/services/test.js"></script> <!-- NOTE: This line will be deleted, using it to test connectionssss -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- g-click="controller.questionClickCount(questionUptick)" -->
+
+<div class="row">
+
+  <div class="col-md-9">
+    <div class="lessonHeaderContainer">
+      <h2 class="lessonTitle">Search Results</h2>
+    </div>
+    <div class="lessonHeaderContainer">
+      <input type="text" ng-model="controller.searchString" placeholder="Search again..." />
+      <button type="button" ng-click="controller.searchAgain()">Search</button>
+    </div>
+    <div class="questions">
+      <ul class="questionsList" ng-repeat="question in controller.questions" >
+        <div class="row">
+          </div>
+      <div class="col-sm-22">
+        <li class="question">
+          <span ng-click="controller.redirectToAnswers(question._id)">{{question.qTitle}}</span>
+          <span></span>
+          <span class="pull-right" class="time">{{question.qDate}}</span><br>
+        </li>
+      </div>
+
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>

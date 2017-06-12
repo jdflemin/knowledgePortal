@@ -72,13 +72,20 @@ input:checked + .slider:before {
   float: left;
 }
 
-.eachCourse:nth-child(even){
-  background-color: blue;
+.eachCourse:nth-child(1n){
+  background-color: rgba(244,244,236,0.3);
+  border: none;
 }
 
-.eachCourse:nth-child(odd){
-  background-color: pink;
+.eachCourse:nth-child(2n){
+  background-color: rgba(180,184,185,0.3);
+  border: none;
 }
+
+.eachCourse:nth-child(3n){
+  background-color: rgba(83,211,246,0.3);
+}
+
 
 .card{
 //  background-color: rgba(152,229,250, 0.4);

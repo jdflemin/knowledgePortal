@@ -1,8 +1,3 @@
-body {
-  background-image: url("/background.jpg");
-  background-repeat: repeat;
-}
-
 /* COLOR SCHEME */
 
 $black:     #000;
@@ -80,11 +75,20 @@ body {
   }
 }
 
+/* IMPORT SCSS MODULES (PARTIALS) */
 
-@import "header";
-@import "dropdown";
-@import "home";
-@import "lessons";
-@import "questions";
-@import "answers";
-@import "admin";
+@import 'modules/components/box';
+@import 'modules/components/button';
+@import 'modules/components/card';
+@import 'modules/components/form';
+@import 'modules/components/modal';
+
+@import 'modules/template/header';
+@import 'modules/template/sidebar';
+
+@import 'modules/content/courses';
+@import 'modules/content/lessons';
+@import 'modules/content/questions';
+@import 'modules/content/answers';
+@import 'modules/content/comments';
+@import 'modules/content/404';

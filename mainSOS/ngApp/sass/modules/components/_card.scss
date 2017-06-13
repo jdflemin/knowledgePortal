@@ -1,0 +1,29 @@
+.card{
+  width: calc(100% - 200px);
+  box-shadow: $shadow;
+  border: 1px rgba(0,0,0,0.1) solid;
+  padding-left: 10px;
+  border-radius: 3px;
+  .cardHeader{
+    .header1{
+      font-family: $heading-font-1;
+    }
+    .header2{
+      font-family: $heading-font-2;
+    }
+  }
+  .cardBody{
+    font-family: $text-font-1;
+  }
+  .cardFooter{
+    .footer1{
+      font-family: $text-font-3;
+    }
+    .footer2{
+      font-family: $text-font-3;
+    }
+    .footer3{
+      font-family: $text-font-3;
+    }
+  }
+}

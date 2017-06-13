@@ -12,39 +12,41 @@
           <li class="eachCourse"  ng-repeat="course in controller.courses">
             <div class="box-outer">
               <div class="box-inner">
+                <div class="course-controls">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <label class="switch">
+                        <input type="checkbox" ng-checked={{course.isEnabled}}>
+                        <div class="slider" ng-click="controller.courseActivation(course)"></div>
+                      </label>
+                    </div>
+                    <div class="col-xs-4">
+                      <button class="custom-btn-utility custom-btn-utility-info" ng-click="controller.showEditModalCourse(course)">
+                        <i class="fa fa-pencil aOnlyAgain" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                    <div class="col-xs-4">
+                      <button class="custom-btn-utility custom-btn-utility-stop" ng-click="controller.delete(course)">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
                 <div class="course-heading">
                   <div class="row">
-                    <div class="col-xs-6">
+                    <div class="col-xs-12">
                       <div class="box-outer">
                         <div class="box-inner">
                           <h4>{{course.name}}<h4>
                         </div>
                       </div>
                     </div>
-                    <div class="col-xs-6">
-                      <button class="custom-btn-utility custom-btn-utility-go" ng-click="controller.redirectToLessons(course._id)">
-                        <i class="fa fa-book" aria-hidden="true"></i>
-                      </button>
-                    </div>
                   </div>
-                  <div class="course-controls">
-                    <div class="row">
-                      <div class="col-xs-4">
-                        <label class="switch">
-                          <input type="checkbox" ng-checked={{course.isEnabled}}>
-                          <div class="slider" ng-click="controller.courseActivation(course)"></div>
-                        </label>
-                      </div>
-                      <div class="col-xs-4">
-                        <button class="custom-btn-utility custom-btn-utility-info" ng-click="controller.showEditModalCourse(course)">
-                          <i class="fa fa-pencil aOnlyAgain" aria-hidden="true"></i>
-                        </button>
-                      </div>
-                      <div class="col-xs-4">
-                        <button class="custom-btn-utility custom-btn-utility-stop" ng-click="controller.delete(course)">
-                          <i class="fa fa-trash" aria-hidden="true"></i>
-                        </button>
-                      </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <button class="custom-btn custom-btn-go ripple" ng-click="controller.redirectToLessons(course._id)">
+                        View
+                      </button>
                     </div>
                   </div>
                 </div>

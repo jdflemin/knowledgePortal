@@ -7,39 +7,35 @@
     li {
       display: inline-block;
       width: 360px;
-      margin: 40px 20px 0px;
+      margin: 20px 10px 0px;
       background-image: url('http://s3.gomedia.us/wp-content/uploads/2016/01/the-shop-go-media-sci-fi-vectors-tutorial-010.jpg');
       background-position: center;
       background-size: cover;
 
       .box-outer {
+        height: 150px;
         box-shadow: $shadow;
-        background-color: rgba(255,255,255,0.75);
+        background-color: rgba(255,255,255,0.6);
         border: $border;
         border-width: 2px;
         border-color: $light;
 
+        .row:nth-child(2) {
+          padding: 10px;
+          background-color: $off-white;
+        }
+
         .course-heading {
           .box-outer {
-            height: 150px;
+            padding: 10px 10px;
             background-color: transparent;
             box-shadow: none;
             border: none;
-          }
-
-          .col-xs-6:first-of-type {
-            padding: 10px;
-            text-align: left;
 
             h4 {
+              line-height: 1.25em;
               letter-spacing: 0.1em;
-              font-family: $heading-font-1;
             }
-          }
-
-          .col-xs-6:last-of-type {
-            padding: 10px;
-            text-align: right;
           }
         }
 
@@ -47,7 +43,7 @@
           padding: 10px 10px 0px;
           text-align: center;
           background-color: $off-white;
-          border-top: $border;
+          border-bottom: $border;
           border-width: 2px;
           border-color: $light;
 

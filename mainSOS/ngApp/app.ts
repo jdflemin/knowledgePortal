@@ -62,18 +62,18 @@ namespace mainsos {
                 controllerAs: 'controller'
             })
             .state('searchPage', {
-                url: '/searchPage/:search',
+                url: '/search/:search',
                 templateUrl: '/ngApp/views/searchPage.html',
                 controller: mainsos.Controllers.SearchController,
                 controllerAs: 'controller'
             })
             .state('notFound', {
-                url: '/notFound',
+                url: '/404',
                 templateUrl: '/ngApp/views/notFound.html'
             });
 
         // Handle request for non-existent route
-        $urlRouterProvider.otherwise('/notFound');
+        $urlRouterProvider.otherwise('/404');
 
         // Enable HTML5 navigation
         $locationProvider.html5Mode(true);

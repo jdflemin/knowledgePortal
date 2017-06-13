@@ -63,7 +63,7 @@
   i {
     font-size: 1.5em;
     transition: $trans;
-    transition-duration: 0.25s;
+    transition-duration: 0.25s !important;
   }
 }
 
@@ -71,7 +71,7 @@
   box-shadow: $shadow-2;
 
   i {
-    font-size: 2em;
+    font-size: 1.85em;
   }
 }
 

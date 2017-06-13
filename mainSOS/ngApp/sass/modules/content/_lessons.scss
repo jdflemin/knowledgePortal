@@ -1,8 +1,54 @@
+#lessonRow{
+  .col-xs-9{
+    width: calc(100%-300px);
+    padding-right: 40px;
+    .headerTitle{
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .row:last-of-type{
+      margin-top: 20px;
+    }
+  }
+  .col-xs-3{
+    width: 300px;
+  }
+}
+
 .lessonList{
   list-style-type: none;
-  padding-left: 10px;
 }
 
 .eachLesson{
-  padding: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.eachLesson:last-of-type{
+  margin-bottom: 0;
+}
+
+.addLesson {
+  text-align: center;
+  input {
+    margin-top: 10px;
+    width: 50%;
+    height: 40px;
+    box-shadow: none;
+    background-color: transparent;
+    font-size: $size;
+    border-radius: 0px;
+    border-bottom-right-radius: $radius * 2;
+    border: none;
+    border-bottom: $border;
+    border-right: $border;
+    border-width: 2px;
+    border-color: $light;
+    outline: none;
+    transition: $trans;
+  }
+
+  input:focus {
+    padding-left: 25px;
+  }
 }

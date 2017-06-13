@@ -1,34 +1,40 @@
 /* CARD LAYOUT */
 
 .card{
-  width: calc(100% - 200px);
+  width: 100%;
   box-shadow: $shadow;
   border: 1px rgba(0,0,0,0.1) solid;
-  padding-left: 10px;
   border-radius: $radius;
   .cardHeader{
+    background-color: rgba(33,47,60,0.25);
     padding: 10px;
     .box-outer{
       height: 50px;
       .header1{
         font-family: $heading-font-1;
-      }
-
-      .header2{
-        font-family: $heading-font-2;
+        text-align: left;
       }
     }
+  }
+      .header2{
+        font-family: $heading-font-2;
+        text-align: right;
+
 
   }
+
 
   .cardBody{
     font-family: $text-font-1;
   }
 
   .cardFooter{
-    padding: 5px;
+    margin: 0 !important;
+    background-color: $grey;
+    padding: 10px;
     .footer1{
       font-family: $text-font-3;
+      text-align: left;
     }
 
     .footer2{
@@ -37,6 +43,11 @@
 
     .footer3{
       font-family: $text-font-3;
+      text-align: right;
     }
   }
+}
+
+.card:hover{
+  box-shadow: $shadow-2;
 }

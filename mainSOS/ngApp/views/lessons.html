@@ -4,15 +4,13 @@
 <br>
 <br>
 
-<div class="row">
+<div class="wrap">
+
+<div class="row" id="lessonRow">
   <div class="col-xs-9">
-    <div class="row">
-      <div class="col-xs-1">
-      </div>
-      <div class="col-xs-10">
-          <h1 class="headerTitle">Welcome to {{controller.Course.name}}</h1>
-      </div>
-      <div class="col-xs-1">
+    <div class="row headerTitle" >
+      <div class="col-xs-12">
+          <h2>Welcome to {{controller.Course.name}}</h2>
       </div>
     </div>
     <div class="row">
@@ -38,12 +36,11 @@
             </div>
             <div class="row cardFooter">
               <div class="col-xs-4 footer1">
-
+                <button class="custom-btn-utility custom-btn-utility-info ripple" ng-click="controller.showEditLessonModal(lesson)">
+                  <i class="fa fa-pencil lessonPencil"  aria-hidden="true"></i>
+                </button>
               </div>
               <div class="col-xs-4 footer2">
-                <button class="custom-btn-utility custom-btn-utility-info ripple">
-                  <i class="fa fa-pencil lessonPencil"  aria-hidden="true" ng-click="controller.showEditLessonModal(lesson)"></i>
-                </button>
               </div>
               <div class="col-xs-4 footer3">
                 <button class="custom-btn-utility custom-btn-utility-stop ripple">
@@ -55,25 +52,17 @@
         </li>
       </ul>
     </div>
-    <br>
-    <hr>
-    <br>
     <div class="row">
       <form>
-        <div class="col-xs-12">
+        <div class="col-xs-12 addLesson">
           <input id="addCourse" type="text" ng-model="controller.newLesson.title" placeholder="Add New Course Here">
-          <button class="addLesson">
+          <button class="custom-btn-utility custom-btn-utility-go ripple">
           <i class="fa fa-plus-square" id="addCourseButton" aria-hidden="true" ng-click="controller.addLesson()"></i>
           </button>
         </div>
     </form>
     </div>
   </div>
-
-
-<h3>still style trending once data is flowing</h3>
-
-
   <div class="col-xs-3">
     <div class="trending">
       <div class="trendingIn">
@@ -84,4 +73,6 @@
       </div>
     </div>
   </div>
+</div>
+
 </div>

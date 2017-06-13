@@ -5,7 +5,7 @@
 <br>
 
 <div class="row">
-  <div class="col-md-9">
+  <div class="col-xs-9">
     <div class="row">
       <div class="col-xs-1">
       </div>
@@ -17,18 +17,30 @@
     </div>
     <div class="row">
       <ul class="lessonList">
-        <li ng-repeat="lesson in controller.lessons" class="eachLesson">
-          <div class="col-xs-2">
-          </div>
-          <div class="col-xs-8">
-              <i class="fa fa-leanpub" id="leanpub" aria-hidden="true" ng-click="controller.redirectToQuestions(lesson._id)"></i>
-            {{lesson.title}}
-          </div>
-          <div class="col-xs-1">
-            <i class="fa fa-pencil" id="pencilLesson" aria-hidden="true" ng-click="controller.showEditLessonModal(lesson)"></i>
-          </div>
-          <div class="col-xs-1">
-            <i class="fa fa-trash" id="trashLesson" aria-hidden="true" ng-click="controller.delete(lesson)"></i>
+        <li class="eachLesson" ng-repeat="lesson in controller.lessons">
+          <div class="card">
+            <div class="row cardHeader" ng-click="controller.redirectToQuestions(lesson._id)">
+              <div class="col-xs-8 header1">
+                {{lesson.title}}
+              </div>
+              <div class="col-xs-4 header2">
+                <i class="fa fa-leanpub book" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="row cardBody">
+
+            </div>
+            <div class="row cardFooter">
+              <div class="col-xs-4 footer1">
+
+              </div>
+              <div class="col-xs-4 footer2">
+                <i class="fa fa-pencil lessonPencil"  aria-hidden="true" ng-click="controller.showEditLessonModal(lesson)"></i>
+              </div>
+              <div class="col-xs-4 footer3">
+                <i class="fa fa-trash lessonTrash" aria-hidden="true" ng-click="controller.delete(lesson)"></i>
+              </div>
+            </div>
           </div>
         </li>
       </ul>
@@ -52,7 +64,7 @@
 <h3>still style trending once data is flowing</h3>
 
 
-  <div class="col-md-3">
+  <div class="col-xs-3">
     <div class="trending">
       <div class="trendingIn">
         <h4 class="trendingTitle">Trending in HTML5</h4>

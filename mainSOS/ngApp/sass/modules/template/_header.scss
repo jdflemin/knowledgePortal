@@ -1,53 +1,58 @@
-.wrap{
-  z-index: 1000;
-  width: 100%;
-  height: 64px;
-  background-color: rgba(244,244,236,0.5);
+/* PAGE HEADER */
+
+#header {
   position: fixed;
-}
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0px;
+  box-shadow: $shadow;
+  background-color: rgba(255,255,255,0.5);
 
-#dropDownContents{
-  display: none;
-}
+  .col-xs-2 {
+    .box-outer {
+      height: 50px;
 
-#nav1{
-  margin-top: 17px;
-}
-
-#nav2{
-margin-top: 17px;
-margin: 0px;
-padding: 0px;
-  #knowledge{
-  width: 80%;
-  height: 80%;
-  }
-}
-
-#nav3{
-  border: 0px;
-  margin-top: 17px;
-  #search{
-    border: 0px;
-    width: 50%;
-    height: 35px;
-    border-radius: 5px;
-    #searcButton{
-      border: 0px;
+      i {
+        cursor: pointer;
+        font-size: 1.75em;
+      }
     }
   }
-}
 
-#nav4{
-    .adminButton{
+  .col-xs-4 {
+    .box-outer {
+      height: 50px;
+
+      img {
+        width: auto;
+        max-width: 100%;
+        height: 30px;
+      }
+    }
+  }
+
+  .col-xs-6 {
+    input {
+      width: calc(100% - 10px);
+      height: 50px;
+      box-shadow: none;
+      background-color: transparent;
+      font-size: $size;
+      border-radius: 0px;
+      border-bottom-right-radius: $radius * 2;
       border: none;
-      position: relative;
-      z-index: 1000;
-      background: rgba(241,8,43,1);
-      margin-top: 17px;
-      border: 5px rgba(241,8,43,1) solid;
-      box-shadow: 5px 5px 2px #ccc;
-      border-radius: 5px;
-      font-family: 'Merriweather', serif;
-     }
+      border-bottom: $border;
+      border-right: $border;
+      border-width: 2px;
+      border-color: $light;
+      outline: none;
+      transition: $trans;
+    }
+
+    input:focus {
+      padding-left: 50px;
+    }
+  }
 }

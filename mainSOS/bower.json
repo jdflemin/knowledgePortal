@@ -20,6 +20,7 @@
     "angular-animate": "^1.5.5",
     "angular-touch": "^1.5.5",
     "animate.css": "^3.5.1",
-    "font-awesome": "fontawesome#^4.7.0"
+    "font-awesome": "fontawesome#^4.7.0",
+    "css-ripple-effect": "^1.0.8"
   }
 }

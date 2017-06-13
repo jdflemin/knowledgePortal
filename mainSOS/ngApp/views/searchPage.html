@@ -5,38 +5,31 @@
 <br>
 <br>
 
-<div class="row">
-  <div class="wrap">
-    <div class="col-xs-12">
-
-      <h2 class="lessonTitle">Search Results</h2>
-
-    </div>
-  </div>
-</div>
-
-<div class="row">
+<div class="row" id="search">
   <div class="wrap">
     <div class="col-md-12">
-        <ul class="questionsList" ng-repeat="question in controller.questions" >
-          <li class="question">
+
+      <h2>Search Results</h2>
+
+        <ul>
+          <li ng-repeat="question in controller.questions">
             <div class="row">
               <div class="col-xs-8">
                 <div class="row">
                   <div class="col-xs-10">
-                    <p>{{question.qTitle}}</p>
+                    <p class="question">{{question.qTitle}}</p>
                   </div>
                   <div class="col-xs-2">
-                    <button class="custom-btn-utility custom-btn-utility-go">
-
+                    <button class="custom-btn-utility custom-btn-utility-go" ng-click="controller.redirectToAnswers(question._id)">
+                      <i class="fa fa-eye" aria-hidden="true"></i>
                     </button>
                   </div>
                 </div>
               </div>
               <div class="col-xs-4">
-                <div class="box-outer">
+                <div class="box-outer date">
                   <div class="box-inner">
-                    <p>{{question.qDate | date: 'MMMM dd - hh:mm a'}}</p>
+                    <p>Posted: {{question.qDate | date: 'MMM dd - h:mm a'}}</p>
                   </div>
                 </div>
               </div>

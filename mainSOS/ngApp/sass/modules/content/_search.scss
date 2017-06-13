@@ -1,0 +1,43 @@
+/* SEARCH PAGE */
+
+#search {
+  h2 {
+    text-align: left;
+    margin-bottom: 50px;
+  }
+
+  ul {
+    li {
+      padding: 20px 0px;
+      list-style-type: none;
+      border-top: $border;
+      border-color: $light;
+
+      .box-outer {
+        height: 50px;
+        text-transform: uppercase;
+        font-family: $heading-font-2;
+      }
+
+      .question {
+        padding: 0px 20px;
+        line-height: 1.5em;
+        font-size: 1.05em;
+      }
+
+      .date {
+        padding: 10px;
+        background-color: $off-white;
+        border-radius: $radius;
+
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+
+    li:first-of-type {
+      border-top: none;
+    }
+  }
+}

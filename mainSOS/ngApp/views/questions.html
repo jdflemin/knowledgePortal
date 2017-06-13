@@ -13,13 +13,15 @@
           <h1 class="lessonTitleH1">Lesson: {{controller.lesson.title}}</h1>
         </div>
     </div>
-    <div class="row">
       <ul class="questionList">
+
         <li class="eachQuestion" ng-repeat="question in controller.questions">
+          <div class="row">
           <div class="col-xs-2">
-            <button class="custom-btn-utility custom-btn-utility-info ripple upArrow">
-            <i class="fa fa-sort-asc arrow" ng-click="controller.countUpTick(question)"></i>
-            </button>
+                <button class="custom-btn-utility custom-btn-utility-info ripple upArrow">
+                <i class="fa fa-sort-asc arrow" ng-click="controller.countUpTick(question)"></i>
+                </button>
+                <p>{{question.clickCount}}</p>
           </div>
           <div class="col-xs-10">
           <div class="card">
@@ -34,19 +36,16 @@
               </div>
             </div>
             <div class="row cardFooter">
-              <div class="col-xs-4 footer1">
-                {{question.clickCount}}
-              </div>
-              <div class="col-xs-4 footer2"></div>
-              <div class="col-xs-4 footer3">
-                {{question.qDate | date:'medium'}}
-              </div>
+              <div class="col-xs-4 footer1"></div>
+              <div class="col-xs-4 footer2">{{question.qDate | date:'medium'}}</div>
+              <div class="col-xs-4 footer3"></div>
             </div>
+          </div>
           </div>
           </div>
         </li>
       </ul>
-    </div>
+
   </div>
   <div class="col-xs-3">
     <div class="askQuestion">

@@ -19,26 +19,36 @@
       <ul class="lessonList">
         <li class="eachLesson" ng-repeat="lesson in controller.lessons">
           <div class="card">
-            <div class="row cardHeader" ng-click="controller.redirectToQuestions(lesson._id)">
+            <div class="row cardHeader ripple" ng-click="controller.redirectToQuestions(lesson._id)">
               <div class="col-xs-8 header1">
-                {{lesson.title}}
+                <div class="box-outer">
+                  <div class="box-inner">
+                    {{lesson.title}}
+                  </div>
+                </div>
               </div>
               <div class="col-xs-4 header2">
-                <i class="fa fa-leanpub book" aria-hidden="true"></i>
+                <button class="custom-btn-utility custom-btn-utility-go ripple">
+                  <i class="fa fa-leanpub book" aria-hidden="true"></i>
+                </button>
               </div>
             </div>
             <div class="row cardBody">
-
+              <hr>
             </div>
             <div class="row cardFooter">
               <div class="col-xs-4 footer1">
 
               </div>
               <div class="col-xs-4 footer2">
-                <i class="fa fa-pencil lessonPencil"  aria-hidden="true" ng-click="controller.showEditLessonModal(lesson)"></i>
+                <button class="custom-btn-utility custom-btn-utility-info ripple">
+                  <i class="fa fa-pencil lessonPencil"  aria-hidden="true" ng-click="controller.showEditLessonModal(lesson)"></i>
+                </button>
               </div>
               <div class="col-xs-4 footer3">
-                <i class="fa fa-trash lessonTrash" aria-hidden="true" ng-click="controller.delete(lesson)"></i>
+                <button class="custom-btn-utility custom-btn-utility-stop ripple">
+                  <i class="fa fa-trash lessonTrash" aria-hidden="true" ng-click="controller.delete(lesson)"></i>
+                </button>
               </div>
             </div>
           </div>

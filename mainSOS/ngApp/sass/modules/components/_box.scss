@@ -1,0 +1,12 @@
+/* BOX LAYOUT (VERTICAL ALIGNMENT) */
+
+.box-outer {
+  display: table;
+  width: 100%;
+  height: auto;
+
+  .box-inner {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}

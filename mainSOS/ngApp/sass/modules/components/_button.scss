@@ -1,0 +1,91 @@
+/* CUSTOM BUTTON / LINK STYLE */
+
+.custom-btn {
+  display: inline-block;
+  width: auto;
+  min-width: 200px;
+  padding: 10px;
+  box-shadow: $shadow;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: $white;
+  font-family: $heading-font-1;
+  font-size: 12px;
+  color: $color;
+  border: $border;
+  outline: none;
+  transition: $trans;
+}
+
+.custom-btn-default {
+  background-color: $white;
+  color: $color;
+}
+
+.custom-btn-go {
+  background-color: $green;
+  color: $white;
+}
+
+.custom-btn-stop {
+  background-color: $red;
+  color: $white;
+}
+
+.custom-btn-warning {
+  background-color: $yellow;
+  color: $white;
+}
+
+.custom-btn-info {
+  background-color: $blue;
+  color: $white;
+}
+
+/* CUSTOM BUTTON / LINK STYLE (UTILITY BUTTON) */
+
+.custom-btn-utility {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  box-shadow: $shadow;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: $white;
+  font-family: $heading-font-1;
+  font-size: 12px;
+  color: $color;
+  border-radius: 100%;
+  border: $border;
+  outline: none;
+  transition: $trans;
+
+  i {
+    font-size: 1.5em;
+  }
+}
+
+.custom-btn-utility-default {
+  background-color: $white;
+  color: $color;
+}
+
+.custom-btn-utility-go {
+  background-color: $green;
+  color: $white;
+}
+
+.custom-btn-utility-stop {
+  background-color: $red;
+  color: $white;
+}
+
+.custom-btn-utility-warning {
+  background-color: $yellow;
+  color: $white;
+}
+
+.custom-btn-utility-info {
+  background-color: $blue;
+  color: $white;
+}

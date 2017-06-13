@@ -1,0 +1,55 @@
+#questionRow{
+  .col-xs-9{
+    width: calc(100%-300px);
+    padding-right: 40px;
+  }
+}
+
+.eachQuestion{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.lessonTitle{
+  text-align: center;
+}
+
+.questionButtonActive:hover{
+  font-size: 1em;
+}
+
+
+.questionList{
+  list-style-type: none;
+  .eachQuestion{
+
+    .col-xs-2{
+      text-align: center;
+      .upArrow:hover{
+        font-size: 1.8em;
+      }
+      .upArrow{
+        font-size: 1.5em;
+
+        .arrow{
+          padding-top: 20%;
+        }
+      }
+    }
+    .col-xs-10{
+      margin-bottom: 20px;
+      .card{
+        .cardHeader{
+          background-color: rgba(33,47,60,0.15);
+          font-size: 1.2em;
+          .col-xs-4{
+            text-align: right;
+          }
+        }
+        .cardFooter{
+          color: $off-white;
+        }
+      }
+    }
+  }
+}

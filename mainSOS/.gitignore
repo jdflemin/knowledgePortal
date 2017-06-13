@@ -4,6 +4,7 @@
 *.js
 .env
 npm-debug.log
+/ngApp/css
 
 !gulpfile.js
 !UIfunctions.js

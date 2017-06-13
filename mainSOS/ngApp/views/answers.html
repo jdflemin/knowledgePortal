@@ -7,52 +7,60 @@
 <br>
 <br>
 
-<div class="row">
-  <div class="col-md-9">
-    <div class="questionInfo">
-      <h4 class="h4Question">{{controller.question.qTitle}}
-        <i class="fa fa-pencil" ng-click="controller.showEditQuestionModal(question._id)"></i>
-      </h4>
-      <hr>
-      <h6><div class="pQuestion"><span><a ng-href="{{controller.question.qCodeLink}}" target="_blank">{{controller.question.qCodeLink}}</a></span></div></h6>
-      <div class="pQuestion"><span>{{controller.question.qContent}}</span></div>
-    </div>
-    <div class="answers">
-      <ul class="answersUL"  ng-repeat="answer in controller.answers">
-        <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-1">
-
-              <span>
-                <h3><i class="fa fa-sort-asc fa-xl" ng-click="controller.countUpTickAnswer(answer)"></i></h3>
-                {{answer.usefulCount}}
-              </span>
+<div class="wrap">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="questionInfo">
+        <h3 class="h4Question">{{controller.question.qTitle}}</h3>
+          <i class="fa fa-pencil" ng-click="controller.showEditQuestionModal(question._id)"></i>
+        <div class="pQuestion"><a ng-href="{{controller.question.qCodeLink}}"><h5>View My Snippet</h5></a></div>
+        <div class="pQuestion"><h6>{{controller.question.qContent}}<h6></div>
+      </div>
+      <div class="answers">
+        <ul class="answersUL"  ng-repeat="answer in controller.answers">
+          <div class="row">
+            <div class="col-xs-1">
+              <i class="fa fa-sort-asc fa-xl" ng-click="controller.countUpTickAnswer(answer)"></i>
+              {{answer.usefulCount}}
             </div>
-            <div class="col-sm-22">
+            <div class="col-xs-11">
               <li class="question">
-                <span>{{answer.aContent}}</span><br>
-                <span><button type="button" ng-click="controller.CommentsModal(answer._id)">Reply</button></span>
-                <span class="pull-right">{{answer.aDate}}</span><br>
-                <span class="pull-right">
+                {{answer.aContent}}
+                <button class="replyButton">Reply</button>
+                {{answer.aDate}}
                 <i class="fa fa-trash" aria-hidden="true" ng-click="controller.deleteAnswer(answer._id)"></i>
                 <i class="fa fa-pencil" aria-hidden="true" ng-click="controller.showEditAnswerModal(answer)"></i>
-                </span>
+                <div class="discussionContainer">
+                  <ul>
+                    <li>comment1</li>
+                    <li>comment2</li>
+                  </ul>
+                </div>
               </li>
             </div>
-        </div>
-      </ul>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="theLessons">
-      <h3 class="h3Lessons">Course Lessons</h3>
-        <ul class="aLessonsUL">
-          <li class="aLessonLI">Lesson 1</li>
-          <li class="aLessonLI">Lesson 2</li>
+          </div>
         </ul>
+      </div>
     </div>
-  </div>
+    <div class="col-md-3">
+      <div class="theLessons">
+        <h3 class="h3Lessons">Course Lessons</h3>
+          <ul class="aLessonsUL">
+            <li class="aLessonLI">Lesson 1</li>
+            <li class="aLessonLI">Lesson 2</li>
+          </ul>
+      </div>
+    </div>
 </div>
+
+
+
+
+
+
+
+
+
 
 <div class="row">
   <div class="col-md-12">
@@ -61,4 +69,7 @@
       <button type="button" class="answerButton" ng-click="controller.addAnswer()">Answer</button>
     </form>
   </div>
+</div>
+
+
 </div>

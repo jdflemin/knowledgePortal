@@ -44,12 +44,6 @@
             </div>
           </div>
           </div>
-
-
-
-
-
-
         </li>
       </ul>
     </div>
@@ -58,8 +52,8 @@
     <div class="askQuestion">
       <form>
         <input type="text" class="newQuestionTitle" placeholder="Question Title" ng-model="controller.newQuestion.qTitle">
-        <input type="text" class="newQuestionBody" placeholder="code link" rows="1" cols="100" ng-model="controller.newQuestion.qCodeLink">
-        <textarea type="text" class="newQuestionBody" placeholder="Question Body" rows="10" cols="100" ng-model="controller.newQuestion.qContent"></textarea>
+        <input type="text" class="newQuestionCodeLink" placeholder="Link URL" ng-model="controller.newQuestion.qCodeLink">
+        <textarea type="text" class="newQuestionBody" placeholder="Question Body" rows="10" ng-model="controller.newQuestion.qContent"></textarea>
         <button type="button" class="questionButton" ng-click="controller.addQuestions()">Ask</button>
       </form>
     </div>

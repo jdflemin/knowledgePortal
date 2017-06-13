@@ -1,3 +1,4 @@
 $(document).on("click", ".replyButton", function() {
-  $(this).parent(".answerLI").find(".discussionContainer").slideToggle(300);
+  console.log('clicked');
+  $(this).parent('.question').find(".discussionContainer").slideToggle(300);
 });

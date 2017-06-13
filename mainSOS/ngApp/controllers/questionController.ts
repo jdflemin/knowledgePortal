@@ -3,8 +3,6 @@ namespace mainsos.Controllers {
   export class QuestionController {
     private lesson;
     private questions;
-    //private clickCount = 0;
-    //public question;
     public newQuestion = {
       qTitle: '',
       qContent: '',
@@ -34,6 +32,7 @@ namespace mainsos.Controllers {
     }
 
     public addQuestions(questions) {
+        this.newQuestion =
            this.questionService.add({
             lessonID: this.$stateParams.id,
              qTitle: this.newQuestion.qTitle,
@@ -42,17 +41,8 @@ namespace mainsos.Controllers {
              userId: this.newQuestion.userId,
              clickCount: this.newQuestion.clickCount,
              qCodeLink: this.newQuestion.qCodeLink
-           }).then((data)  => {
-             this.questionService.lessonID = '';
-             this.questionService.qTitle = '';
-             this.questionService.qContent = '';
-             this.questionService.qDate = Date.now();
-             this.questionService.userId;
-             this.questionService.clickCount;
-             this.questionService.qCodeLink = '';
-             this.questions.push(data);
-           })
-           this.listQuestions();
+           }).then(()  =>
+           this.listQuestions());
          }
 
      deleteQuestion(id) {
@@ -61,27 +51,6 @@ namespace mainsos.Controllers {
          this.questions = this.questionService.showAllQuestions();
        }).catch((err) => console.log(err));
      }
-
-
-//////////////upTick Section for questions
-
-    countUpTick(question) {
-      console.log("this is the question clickCount is " + question.clickCount);
-      question.clickCount += 1;
-      this.questionService.update({
-        _id: question._id,
-        qTitle: question.qTitle,
-        qContent: question.qContent,
-        qDate: question.qDate,
-        lessonID: question.lessonID,
-        clickCount: question.clickCount,
-        userId: question.userId,
-        qCodeLink: question.qCodeLink
-      })//.then(() => {this.listQuestions()});
-    }
-
-//////////////////
-
 
     public delete(ID) {
       this.questionService.delete(ID).then(() => this.listQuestions());

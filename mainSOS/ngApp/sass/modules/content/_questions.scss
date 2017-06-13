@@ -20,10 +20,11 @@
   .eachQuestion{
 
     .col-xs-2{
-      text-align: center;
+      text-align: right;
+      padding-top:3%;
+      padding-right: 1%;
       .upArrow{
         font-size: 1.5em;
-
         .arrow{
           padding-top: 20%;
         }
@@ -45,4 +46,33 @@
       }
     }
   }
+}
+
+.askQuestion{
+  margin-top: 50%;
+  text-align: center;
+  position: center;
+    .newQuestionTitle{
+      padding: 10px;
+      margin-top: 10%;
+      margin-bottom: 5%;
+      width: 100%;
+      border: 1px solid $light;
+      box-shadow: $shadow-3;
+    }
+    .newQuestionCodeLink{
+      padding: 10px;
+      margin-bottom: 5%;
+      width: 100%;
+      border: 1px solid $light;
+      box-shadow: $shadow-3;
+    }
+    .newQuestionBody{
+      padding: 10px;
+      resize: none;
+      margin-bottom: 5%;
+      width: 100%;
+      border: 1px solid $light;
+      box-shadow: $shadow-3;
+    }
 }

@@ -93,7 +93,7 @@ namespace mainsos.Controllers {
             name: this.courses.name,
             isEnabled: this.courses.isEnabled,
             icon: this.courses.icon
-          }).then(() => {this.close()});
+          }).then(() => this.close());
         }
 
         public close() {

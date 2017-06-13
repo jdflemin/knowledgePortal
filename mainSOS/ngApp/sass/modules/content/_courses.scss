@@ -130,3 +130,30 @@
     }
   }
 }
+
+
+#addCourse{
+  text-align: center;
+  margin-top: 20px;
+  input {
+    margin-top: 20px;
+    width: 40%;
+    height: 40px;
+    box-shadow: none;
+    background-color: transparent;
+    font-size: $size;
+    border-radius: 0px;
+    border-bottom-right-radius: $radius * 2;
+    border: none;
+    border-bottom: $border;
+    border-right: $border;
+    border-width: 2px;
+    border-color: $light;
+    outline: none;
+    transition: $trans;
+  }
+
+  input:focus {
+    padding-left: 25px;
+  }
+}

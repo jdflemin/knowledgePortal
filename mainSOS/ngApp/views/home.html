@@ -57,13 +57,10 @@
       </div>
     </div>
   </div>
-  <br>
-  <hr>
-  <br>
   <div class="row">
-    <div class="col-xs-12">
-      <input id="addCourse" type="text" ng-model="controller.newCourse.name" placeholder="Add New Course Here">
-      <button class="addLesson">
+    <div class="col-xs-12" id="addCourse">
+      <input type="text" ng-model="controller.newCourse.name" placeholder="Add New Course Here">
+      <button class="custom-btn-utility custom-btn-utility-go ripple">
         <i class="fa fa-plus-square" id="addCourseButton" aria-hidden="true" ng-click="controller.addCourse()"></i>
       </button>
     </div>

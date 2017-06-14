@@ -12,7 +12,7 @@ namespace mainsos.Services {
       this.QUESTION_ANSWER_RESOURCE = this.$resource('http://localhost:3002/api/v1/answers/questions/:id/answers');
       this.SEARCH_RESOURCE = this.$resource('http://localhost:3001/api/v1/answers/search/:search');
       this.CRUD_ANSWER_SERVICE = this.$resource('http://localhost:3003/api/v1/answers/:id')
-      this.ANSWER_BYDATE_RESOURCE = this.$resource('http://localhost:3002/api/v1/answers/:Date');
+      this.ANSWER_BYDATE_RESOURCE = this.$resource('http://localhost:3002/api/v1/answers/getDate/:date');
     }
 
     public getAll() {
@@ -49,7 +49,7 @@ namespace mainsos.Services {
     }
 
     public getAllbyDate(sentDate) {
-      return this.ANSWER_BYDATE_RESOURCE.get({Date: sentDate}).$promise;
+      return this.ANSWER_BYDATE_RESOURCE.query({date: sentDate}).$promise;
     }
 
 

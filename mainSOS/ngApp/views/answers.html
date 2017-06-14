@@ -11,30 +11,58 @@
   <div class="row">
     <div class="col-md-9">
       <div class="questionInfo">
-        <h3 class="h4Question">{{controller.question.qTitle}}</h3>
-          <i class="fa fa-pencil" ng-click="controller.showEditQuestionModal(question._id)"></i>
-        <div class="pQuestion"><a ng-href="{{controller.question.qCodeLink}}"><h5>View My Snippet</h5></a></div>
-        <div class="pQuestion"><h6>{{controller.question.qContent}}<h6></div>
+        <div class="row cardHeader">
+          <div class="col-xs-9">
+              <h3 class="questionTitle">{{controller.question.qTitle}}</h3>
+          </div>
+          <div class="col-xs-3">
+            <i class="fa fa-pencil" ng-click="controller.showEditQuestionModal(question._id)"></i>
+          </div>
+        </div>
+        <div class="cardBody">
+          <p>{{controller.question.qContent}}</p>
+          <a href="{{controller.question.qCodeLink}}"><h5>View My Snippet</h5></a>
+        </div>
       </div>
       <div class="answers">
         <ul class="answersUL"  ng-repeat="answer in controller.answers">
           <div class="row">
             <div class="col-xs-1">
               <i class="fa fa-sort-asc fa-xl" ng-click="controller.countUpTickAnswer(answer)"></i>
-              {{answer.usefulCount}}
+              <p>{{answer.usefulCount}}</p>
             </div>
             <div class="col-xs-11">
               <li class="question">
-                {{answer.aContent}}
-                <button class="replyButton">Reply</button>
-                {{answer.aDate}}
-                <i class="fa fa-trash" aria-hidden="true" ng-click="controller.deleteAnswer(answer._id)"></i>
-                <i class="fa fa-pencil" aria-hidden="true" ng-click="controller.showEditAnswerModal(answer)"></i>
-                <div class="discussionContainer">
-                  <ul>
-                    <li>comment1</li>
-                    <li>comment2</li>
-                  </ul>
+                <div class="forQuestion card">
+                  <div class="cardHeader">
+                    <div class="inner">
+                      {{answer.aContent}}
+                    </div>
+                  </div>
+                  <div class="cardFooter row">
+                    <div class="col-xs-4 footer1">
+                      <button class="custom-btn custom-btn-go ripple replyButton">Reply</button>
+                    </div>
+                      <div class="col-xs-2 footer2">
+                      <button class="custom-btn-utility custom-btn-utility-info ripple" ng-click="controller.showEditAnswerModal(answer)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="col-xs-2 footer2">
+                      <button class="custom-btn-utility custom-btn-utility-stop ripple" ng-click="controller.deleteAnswer(answer._id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="col-xs-4 footer3">
+                      {{answer.aDate | date:'MM/dd/yyyy h:mma'}}
+                    </div>
+                  </div>
+                  <div class="discussionContainer cardHeader">
+                    <ul>
+                      <li>comment1</li>
+                      <li>comment2</li>
+                    </ul>
+                    <div class="newComment">
+                      <textarea rows="2" cols="30" placeholder="New comment"></textarea>
+                      <button type="button" name="button">Comment</button>
+                    </div>
+                  </div>
                 </div>
               </li>
             </div>
@@ -45,10 +73,9 @@
     <div class="col-md-3">
       <div class="theLessons">
         <h3 class="h3Lessons">Course Lessons</h3>
-          <ul class="aLessonsUL">
-            <li class="aLessonLI">Lesson 1</li>
-            <li class="aLessonLI">Lesson 2</li>
-          </ul>
+        <ul ng-repeat="sidelesson in controller.sideLessons">
+         <li ng-click="controller.redirectToQuestions(sidelesson._id)">{{sidelesson.title}}</li>
+        </ul>
       </div>
     </div>
 </div>

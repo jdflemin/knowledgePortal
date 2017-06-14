@@ -14,12 +14,17 @@ router.get('/:id', (req, res) => {
   .then((foundComment) => res.json(foundComment));
 });
 
-router.get('/:date', (req, res) => {
-  Comments.find({aDate: {$where: "Comments.cDate > req.params.date"}})
-  .then((matches) => res.json(matches));
+router.get('/getDate/:date', (req, res) => {
+   let rightNow = new Date().toJSON();
+   Comments.find({cDate: {
+         $lte : rightNow,
+         $gt : req.params.date
+   }})
+   .then((matches) => res.json(matches))
+   .catch((err) => console.log(err));
 });
 
-router.get('/answers/:id/comments', (req, res) => {
+router.get('/answers/:id/comment', (req, res) => {
   Comments.find({answerId: req.params.id})
   .then((matches) => res.json(matches));
 });

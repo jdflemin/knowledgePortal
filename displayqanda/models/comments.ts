@@ -1,16 +1,16 @@
 import * as mongoose from 'mongoose';
 
 export interface Comments extends mongoose.Document {
-  cDate: string;
-  answerId: string;
-  aContent: string;
-  userId: string;
-  likeCount: number;
+  cDate;
+  answerId;
+  aContent;
+  userId;
+  likeCount;
 }
 
 let commentSchema = new mongoose.Schema ({
   cDate: {
-    type: String,
+    type: Date,
     required: true
   },
   answerId: {

@@ -1,0 +1,83 @@
+.questionInfo{
+  border: 1px solid black;
+  width: calc(100% - 200px);
+  .row{
+    border-bottom: 1px solid $light;
+    padding: 10px;
+    .col-xs-9{
+      text-align: center;
+    }
+    .col-xs-3{
+      text-align: right;
+    }
+  }
+  .cardBody{
+    p{
+      padding: 10px;
+      text-align: left;
+    }
+    h5{
+      text-align: right;
+      color: $dark;
+      cursor: pointer;
+    }
+  }
+}
+
+.answersUL{
+  list-style-type: none;
+  margin: 20px;
+  .col-xs-1{
+    text-align: center;
+    padding-right: 10px;
+    p{
+      text-align: center;
+    }
+  }
+  .col-xs-11{
+    width: calc(100% - 250px);
+    padding-bottom: 5px;
+    .question{
+      .cardHeader{
+        background-image: url('http://s3.gomedia.us/wp-content/uploads/2016/01/the-shop-go-media-sci-fi-vectors-tutorial-010.jpg');
+        background-position: center;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        .inner{
+          background-color: rgba(255,255,255,0.6);
+          padding: 10px;
+        }
+      }
+
+    }
+    .cardFooter{
+      .footer2{
+        text-align: center;
+      }
+      .footer3{
+        text-align: center;
+        padding-top: 10px;
+      }
+    }
+    .discussionContainer{
+      transition: $trans;
+      display: none;
+      padding: 5px;
+      ul{
+        list-style-type: none;
+        li{
+          margin: 25px;
+          margin-left: 10px;
+          border: $border;
+          box-shadow: $shadow;
+        }
+      }
+    }
+  }
+}
+
+
+.theLessons{
+  width: 300px;
+}

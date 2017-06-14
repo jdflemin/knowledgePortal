@@ -64,8 +64,8 @@
     <div class="trending">
       <div class="trendingIn">
         <h4 class="trendingTitle">Trending in HTML5</h4>
-        <ul class="trendingUL" ng-repeat="trendQuestion in controller.trendQuestions">
-          <li class="trendingLI">{{trendQuestion.qTitle}}</li>
+        <ul ng-repeat="trendQuestion in controller.trendAnswers">
+          <li ng-click="controller.redirectToAnswers(trendQuestion._id)">{{trendQuestion.aContent}}</li>
         </ul>
       </div>
     </div>

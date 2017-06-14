@@ -26,18 +26,19 @@
           <div class="col-xs-10">
           <div class="card">
             <div class="row cardHeader ripple" >
-              <div class="col-xs-8">
-                {{question.qTitle}}
-              </div>
-              <div class="col-xs-4">
-                <button class="custom-btn-utility custom-btn-utility-go ripple questionButtonActive" ng-click="controller.redirectToAnswers(question._id)">
-                  <i class="fa fa-file" aria-hidden="true"></i>
-                </button>
+              <div class="inner">
+                <div class="col-xs-8">
+                  {{question.qTitle}}
+                </div>
+                <div class="col-xs-4">
+                    <button class="custom-btn-utility custom-btn-utility-go ripple questionButtonActive" ng-click="controller.redirectToAnswers(question._id)"><i class="fa fa-file" aria-hidden="true"></i>
+                  </button>
+                </div>
               </div>
             </div>
             <div class="row cardFooter">
               <div class="col-xs-4 footer1"></div>
-              <div class="col-xs-4 footer2">{{question.qDate | date:'medium'}}</div>
+              <div class="col-xs-4 footer2">{{question.qDate |date:'MM/dd/yyyy h:mma'}}</div>
               <div class="col-xs-4 footer3"></div>
             </div>
           </div>

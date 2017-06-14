@@ -55,5 +55,21 @@ namespace mainsos.Controllers {
     public delete(ID) {
       this.questionService.delete(ID).then(() => this.listQuestions());
     }
+
+    countUpTick(question) {
+  question.clickCount += 1;
+  this.questionService.update({
+    _id: question._id,
+    qTitle: question.qTitle,
+    qContent: question.qContent,
+    qDate: question.qDate,
+    lessonID: question.lessonID,
+    clickCount: question.clickCount,
+    userId: question.userId,
+    qCodeLink: question.qCodeLink
+  })//.then(() => {this.listQuestions()});
+}
+
+
 }
 }

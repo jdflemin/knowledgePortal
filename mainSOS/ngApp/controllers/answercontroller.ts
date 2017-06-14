@@ -7,7 +7,7 @@ namespace mainsos.Controllers {
     private comments;
     private Modal;
     public newAnswer = {
-      aDate: Date.now(),
+      aDate: new Date(),
       questionId: this.question,
       aContent: '',
       userId: '',  //this to be updated when we see what token will be as it will auto populate with who is logged in
@@ -16,11 +16,12 @@ namespace mainsos.Controllers {
       aCodeLink: '',
     }
 
-    constructor(private questionService, private answerService, private commentService, private $stateParams, private $state, private $uibModal) {
+    constructor(private questionService, private answerService, private commentService, private $stateParams, private $state, private $uibModal, private lessonServices, private courseServices) {
       console.log("Rosa" + $stateParams.id);
       this.answers = this.questionService.getOne($stateParams.id).then((data) => {
           this.question = data;
           this.listAnswers();
+          this.getSideInformation();
       });
     }
 
@@ -31,7 +32,7 @@ namespace mainsos.Controllers {
 
     public addAnswer(answers) {
       this.answerService.add({
-        aDate: Date.now(),
+        aDate: new Date(),
         questionId: this.$stateParams.id,
         aContent: this.newAnswer.aContent,
         userId: this.$stateParams.id,
@@ -100,7 +101,7 @@ namespace mainsos.Controllers {
     }
 
     ////////////////upTick section for answers
-      countUpTickAnswer(answer) {
+      private countUpTickAnswer(answer) {
         answer.usefulCount += 1;
         this.answerService.update({
           _id: answer._id,
@@ -113,6 +114,37 @@ namespace mainsos.Controllers {
           aCodeLink: answer.aCodeLink,
         })
       }
+
+
+      //for side lessons list.---
+      private sideLesson;
+      private sideLessons;
+      private sideCourse;
+
+      private getSideInformation(){
+        this.lessonServices.getOne(this.question.lessonID).then((data) => {
+          this.sideLesson = data;
+          this.getSideCourse();
+        });
+      }
+
+      private getSideCourse(){
+        this.courseServices.getOne(this.sideLesson.courseId).then((data) => {
+          this.sideCourse = data;
+          this.getSideLessons();
+        });
+      }
+
+      private getSideLessons(){
+        this.sideLessons = this.lessonServices.getAllCourseLessons(this.sideCourse._id);
+      }
+
+      public redirectToQuestions(lessonId){
+        this.$state.go('questions', {id: lessonId});
+      }
+     //end for side lessons list.--
+
+
 
 }
 
@@ -184,7 +216,7 @@ namespace mainsos.Controllers {
     private answer;
     private comments;
     public newComment = {
-      cDate: Date.now(),
+      cDate: new Date(),
       answerId: '',
       cContent: '',
       userId: '',   //this to be updated when we see what token will be as it will auto populate with who is logged in
@@ -205,7 +237,7 @@ namespace mainsos.Controllers {
     public addComment(){
       this.commentService.add({
         cContent: this.newComment.cContent,
-        cDate: Date.now(),
+        cDate: new Date(),
         answerId: this.answer._id,
         userId: this.newComment.userId,
         likeCount: this.newComment.likeCount

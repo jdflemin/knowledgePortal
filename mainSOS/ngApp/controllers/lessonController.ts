@@ -80,6 +80,7 @@ namespace mainsos.Controllers{
       this.commentService.getAllbyDate(this.referenceDate.toJSON()).then((data) => {
         this.trendComments = data;
         this.addtoTrendingAnswers();
+        this.addtoTrendingQuestions();
       })
     }
 
@@ -98,6 +99,7 @@ namespace mainsos.Controllers{
           }
         });
       }
+      this.addtoTrendingQuestions();
       console.log('trendAnswers')
     }
 

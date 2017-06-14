@@ -6,7 +6,7 @@ namespace mainsos.Controllers {
     public newQuestion = {
       qTitle: '',
       qContent: '',
-      qDate: Date.now(),
+      qDate: new Date(),
       lessonID: this.lesson,
       clickCount: 0,
       userId: '',
@@ -45,7 +45,7 @@ namespace mainsos.Controllers {
            this.listQuestions());
          }
 
-     deleteQuestion(id) {
+    public deleteQuestion(id) {
        this.questionService.delete(id)
        .then((data) => {
          this.questions = this.questionService.showAllQuestions();
@@ -56,7 +56,7 @@ namespace mainsos.Controllers {
       this.questionService.delete(ID).then(() => this.listQuestions());
     }
 
-    countUpTick(question) {
+    public countUpTick(question) {
   question.clickCount += 1;
   this.questionService.update({
     _id: question._id,

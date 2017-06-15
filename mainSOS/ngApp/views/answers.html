@@ -1,34 +1,29 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<div class="wrap">
+<div class="wrap" id="topSpacing">
   <div class="row">
     <div class="col-md-9">
       <div class="questionInfo">
         <div class="row cardHeader">
           <div class="col-xs-9">
-              <h3 class="questionTitle">{{controller.question.qTitle}}</h3>
+              <h4 class="questionTitle" style="text-align: left">{{controller.question.qTitle}}</h4>
           </div>
           <div class="col-xs-3">
-            <i class="fa fa-pencil" ng-click="controller.showEditQuestionModal(question._id)"></i>
+            <button class="custom-btn-utility custom-btn-utility-info ripple" ng-click="controller.showEditQuestionModal(question._id)">
+              <i class="fa fa-pencil"></i>
+            </button>
           </div>
         </div>
         <div class="cardBody">
           <p>{{controller.question.qContent}}</p>
-          <a href="{{controller.question.qCodeLink}}"><h5>View My Snippet</h5></a>
+          <a href="{{controller.question.qCodeLink}}"><h5 style="padding: 10px">{{controller.question.qCodeLink}}</h5></a>
         </div>
       </div>
       <div class="answers">
         <ul class="answersUL"  ng-repeat="answer in controller.answers">
           <div class="row">
             <div class="col-xs-1">
-              <i class="fa fa-sort-asc fa-xl" ng-click="controller.countUpTickAnswer(answer)"></i>
+              <button class="custom-btn-utility custom-btn-utility-info" ng-click="controller.countUpTickAnswer(answer)">
+              <i class="fa fa-sort-asc"></i>
+              </button>
               <p>{{answer.usefulCount}}</p>
             </div>
             <div class="col-xs-11">
@@ -41,7 +36,7 @@
                   </div>
                   <div class="cardFooter row">
                     <div class="col-xs-4 footer1">
-                      <button class="custom-btn custom-btn-go ripple replyButton">Reply</button>
+                      <button class="custom-btn custom-btn-go ripple replyButton" ng-click="controller.answerComments(answer._id)">Reply</button>
                     </div>
                       <div class="col-xs-2 footer2">
                       <button class="custom-btn-utility custom-btn-utility-info ripple" ng-click="controller.showEditAnswerModal(answer)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
@@ -55,12 +50,27 @@
                   </div>
                   <div class="discussionContainer cardHeader">
                     <ul>
-                      <li>comment1</li>
-                      <li>comment2</li>
+                      <li ng-repeat="comment in controller.comments">
+                        <div class="row">
+                          <div class="col-xs-8">
+                            {{comment.cContent}}
+                            </div>
+                            <div class="col-xs-2">
+                              <button class="custom-btn-utility custom-btn-utility-info ripple" ng-click="controller.updateComment(comment, answer._id)">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                              </button>
+                            </div>
+                            <div class="col-xs-2">
+                              <button class="custom-btn-utility custom-btn-utility-stop ripple" ng-click="controller.deleteComment(comment._id, answer._id)">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                              </button>
+                            </div>
+                        </div>
+                      </li>
                     </ul>
                     <div class="newComment">
-                      <textarea rows="2" cols="30" placeholder="New comment"></textarea>
-                      <button type="button" name="button">Comment</button>
+                      <textarea rows="3" placeholder="New comment" ng-model="controller.newComment.cContent"></textarea>
+                      <button class="custom-btn custom-btn-go ripple" ng-click="controller.addComment(answer._id)">Comment</button>
                     </div>
                   </div>
                 </div>
@@ -70,31 +80,21 @@
         </ul>
       </div>
     </div>
-    <div class="col-md-3">
-      <div class="theLessons">
-        <h3 class="h3Lessons">Course Lessons</h3>
-        <ul ng-repeat="sidelesson in controller.sideLessons">
-         <li ng-click="controller.redirectToQuestions(sidelesson._id)">{{sidelesson.title}}</li>
+    <div class="col-xs-3 sideBar">
+      <div class="div1">
+        <div class="div2">
+        <h4>Course Lessons</h4>
+        <ul>
+          <li ng-repeat="sidelesson in controller.sideLessons" ng-click="controller.redirectToQuestions(sidelesson._id)">{{sidelesson.title}}</li>
         </ul>
+      </div>
       </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
 <div class="row">
-  <div class="col-md-12">
-    <form class="aForm">
-      <textarea name="name" class="answerText" ng-model="controller.newAnswer.aContent" rows="4" cols="80">Please enter your answer/solution...</textarea>
-      <button type="button" class="answerButton" ng-click="controller.addAnswer()">Answer</button>
-    </form>
+  <div class="col-xs-12">
+    <textarea name="name" class="answerText" ng-model="controller.newAnswer.aContent" rows="5" style="padding: 10px"></textarea>
+    <button style="margin-top: 20px" type="button" class="answerButton custom-btn custom-btn-go" ng-click="controller.addAnswer()">Answer</button>
   </div>
 </div>
 

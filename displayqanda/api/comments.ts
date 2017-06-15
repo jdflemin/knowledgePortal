@@ -24,7 +24,7 @@ router.get('/getDate/:date', (req, res) => {
    .catch((err) => console.log(err));
 });
 
-router.get('/answers/:id/comment', (req, res) => {
+router.get('/answers/:id/comments', (req, res) => {
   Comments.find({answerId: req.params.id})
   .then((matches) => res.json(matches));
 });

@@ -19,14 +19,24 @@ namespace mainsos.Controllers{
     }
 
     public searchQuestionContent() {
-      this.questions = this.questionService.searchQuestionContent(this.searchString);
+      if (this.searchString == '') {
+        alert('Search was empty')
+        this.$state.go('home')
+      } else {
+        this.questions = this.questionService.searchQuestionContent(this.searchString);
+      }
     }
 
   public searchAnswers() {
-       this.answerService.searchAnswerContent(this.searchString).then((data) => {
-         this.answers = data;
-         this.addtoQuestions();
-       });
+      if (this.searchString == '') {
+        alert('Search was empty')
+        this.$state.go('home')
+      } else {
+        this.answerService.searchAnswerContent(this.searchString).then((data) => {
+          this.answers = data;
+          this.addtoQuestions();
+        });
+      }
     }
 
     public addtoQuestions() {

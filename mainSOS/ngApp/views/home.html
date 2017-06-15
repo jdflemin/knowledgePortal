@@ -1,49 +1,49 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<div class="wrap">
+<div class="wrap" style="max-width: 1200px">
   <div class="row" id="courseDirectory">
-    <div class="wrapper">
-      <div class="col-xs-12">
-        <ul class="coursesList">
-          <li class="eachCourse"  ng-repeat="course in controller.courses">
+    <div class="wrapper" style="padding: 0">
+      <div class="col-xs-12" style="padding: 0">
+        <ul>
+          <li class="eachCourse"  ng-repeat="course in controller.courses" style="width: 360px">
             <div class="box-outer">
               <div class="box-inner">
+
                 <div class="course-controls">
                   <div class="row">
+
                     <div class="col-xs-4">
                       <label class="switch">
                         <input type="checkbox" ng-checked={{course.isEnabled}}>
                         <div class="slider round" ng-click="controller.courseActivation(course)"></div>
                       </label>
                     </div>
+
                     <div class="col-xs-4">
                       <button class="custom-btn-utility custom-btn-utility-info" ng-click="controller.showEditModalCourse(course)">
                         <i class="fa fa-pencil aOnlyAgain" aria-hidden="true"></i>
                       </button>
                     </div>
+
                     <div class="col-xs-4">
                       <button class="custom-btn-utility custom-btn-utility-stop" ng-click="controller.delete(course)">
                         <i class="fa fa-trash" aria-hidden="true"></i>
                       </button>
                     </div>
+
                   </div>
                 </div>
+
                 <div class="course-heading">
                   <div class="row">
-                    <div class="col-xs-12">
+                    <div class="col-xs-12" style="padding: 0">
                       <div class="box-outer">
                         <div class="box-inner">
-                          <h4>{{course.name}}<h4>
+                          <h4>{{course.name}}</h4>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-xs-12">
+                    <div class="col-xs-12" style="padding: 0">
                       <button class="custom-btn custom-btn-go ripple" ng-click="controller.redirectToLessons(course._id)">
                         View
                       </button>

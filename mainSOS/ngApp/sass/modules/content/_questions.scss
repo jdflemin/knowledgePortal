@@ -39,14 +39,21 @@
       margin-bottom: 20px;
       .card{
         .cardHeader{
-          background-color: rgba(33,47,60,0.15);
-          font-size: 1.2em;
+          background-image: url('http://s3.gomedia.us/wp-content/uploads/2016/01/the-shop-go-media-sci-fi-vectors-tutorial-010.jpg');
+          background-position: center;
+          background-size: cover;
+          margin: 0;
+          padding: 0;
+          .inner{
+            background-color: rgba(255,255,255,0.4);
+            padding: 10px;
+          }
           .col-xs-4{
             text-align: right;
           }
         }
         .cardFooter{
-          color: $off-white;
+          color: $dark;
         }
       }
     }

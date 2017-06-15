@@ -13,17 +13,14 @@ router.get('/:id', (req, res) => {
 });
 
 router.get('/getDate/:date', (req, res) => {
-   console.log("here 1");
    let rightNow = new Date().toJSON();
    Answer.find({aDate: {
          $lte : rightNow,
          $gt : req.params.date
    }})
    .then((matches) => {
-     console.log("here 2")
      res.json(matches)
-     console.log(matches)
-   })
+    })
    .catch((err) => console.log(err));
 });
 

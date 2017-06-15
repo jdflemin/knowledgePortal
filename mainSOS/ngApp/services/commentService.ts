@@ -22,7 +22,7 @@ export class CommentService {
   }
 
   public getAllbyAnswer(answerId) {
-    return this.ANSWER_COMMENT_RESOURCES.query({id: answerId});
+    return this.ANSWER_COMMENT_RESOURCES.query({id: answerId}).$promise;
   }
 
   public add(comment) {

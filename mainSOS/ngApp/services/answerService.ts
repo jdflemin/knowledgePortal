@@ -40,7 +40,6 @@ namespace mainsos.Services {
     }
 
     public delete(id) {
-      console.log("this is the id " + id);
       return this.CRUD_ANSWER_SERVICE.delete({id: id}).$promise;
     }
 
@@ -51,8 +50,6 @@ namespace mainsos.Services {
     public getAllbyDate(sentDate) {
       return this.ANSWER_BYDATE_RESOURCE.query({date: sentDate}).$promise;
     }
-
-
   }
 
   angular.module('mainsos').service('answerService', AnswerService);

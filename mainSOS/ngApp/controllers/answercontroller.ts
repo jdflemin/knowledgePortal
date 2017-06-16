@@ -14,15 +14,28 @@ namespace mainsos.Controllers {
       usefulCount: 0,
       bestAnswer: false,
       aCodeLink: '',
-    }
+    };
+    public administrator = false;
 
     constructor(private questionService, private answerService, private commentService, private $stateParams, private $state, private $uibModal, private lessonServices, private courseServices) {
-      this.answers = this.questionService.getOne($stateParams.id).then((data) => {
+      this.checkAccess();
+      this.getQuestion($stateParams.id);
+      }
+
+    public getQuestion(id) {
+      this.questionService.getOne(id).then((data) => {
           this.question = data;
           this.listAnswers();
           this.getSideInformation();
           this.question.qCodeLink = this.checklink(this.question.qCodeLink);/////
       });
+    }
+
+    public checkAccess(){
+      let x = sessionStorage.getItem('role');
+      if( x == 'admin'){
+        this.administrator = true;
+      }
     }
 
     public listAnswers() {
@@ -60,11 +73,11 @@ namespace mainsos.Controllers {
       });
     }
 
-      deleteAnswer(id) {
+    public deleteAnswer(id) {
       this.answerService.delete(id)
-      .then((data) => {
-      this.answers = this.answerService.answerShowAll();
-      })
+      .then(() => {
+        this.listAnswers();
+      });
     }
 
     public showEditAnswerModal(answer) {
@@ -91,7 +104,7 @@ namespace mainsos.Controllers {
         size: 'md'
       });
 
-      modal.closed.then(() => this.listAnswers());
+      modal.closed.then(() => {this.getQuestion(this.question._id)});
     }
 
     ////////////////upTick section for answers
@@ -182,7 +195,7 @@ namespace mainsos.Controllers {
      }
 
      public updateComment(comment, id){
-       let Modal = this.$uibModal.open({
+       let modal = this.$uibModal.open({
          templateUrl: '/ngApp/views/updateCommentsModal.html',
          controller: mainsos.Controllers.updateCommentsController,
          controllerAs: 'controller',
@@ -192,7 +205,7 @@ namespace mainsos.Controllers {
          }
        });
 
-       Modal.closed.then(() => this.answerComments(id));
+       modal.closed.then(() => this.answerComments(id));
      }
 
 }
@@ -250,8 +263,6 @@ namespace mainsos.Controllers {
         lessonID: this.questions.lessonID,
         clickCount: this.questions.clickCount,
         qCodeLink: this.questions.qCodeLink
-      }).then(() => {
-      this.questionService.showAllQuestions()
       }).then(() => {this.close()});
     }
 
@@ -281,7 +292,7 @@ namespace mainsos.Controllers {
         }).then(() => this.$uibModalInstance.close());
       }
 
-      public closeUpdateModal(){
+      public close(){
         this.$uibModalInstance.close();
       }
   }

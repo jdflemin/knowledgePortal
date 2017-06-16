@@ -8,13 +8,22 @@ namespace mainsos.Controllers{
       title: '',
       courseId: ''
     };
+    public administrator = false;
 
     constructor(private courseServices, private lessonServices, private $stateParams, private $state, private questionService, private answerService, private commentService, private $uibModal){
+      this.checkAccess();
       courseServices.getOne($stateParams.id).then((data) => {
         this.Course = data;
         this.listLessons();
         this.getTrendingQuestions();
       })
+    }
+
+    public checkAccess(){
+      let x = sessionStorage.getItem('role');
+      if( x == 'admin'){
+        this.administrator = true;
+      }
     }
 
     public listLessons(){
@@ -29,15 +38,11 @@ namespace mainsos.Controllers{
       this.newLesson = this.lessonServices.add({
         title: this.newLesson.title,
         courseId: this.$stateParams.id,
-      }).then(() => this.lessonServices.reShow());
+      }).then(() => this.listLessons());
     }
 
-    // public editLesson(id){
-    //   this.lessonServices.post(id).then(() => this.lessonServices.reShow());
-    // }
-
     public delete(course){
-      this.lesson = this.lessonServices.delete(course._id).then(() => this.lessonServices.reShow());
+      this.lesson = this.lessonServices.delete(course._id).then(() => this.listLessons());
     }
 
     public showEditLessonModal(lesson){

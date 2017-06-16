@@ -3,12 +3,11 @@
 </div>
 
 <div class="modal-body">
-  <form class="form-group">
-    <div class="form-group">
-      <label>Lesson Title:</label>
+      <h4>Lesson Title:</h4>
       <input ng-model="controller.courses.name" />
-<div class="modal-footer">
-  <button class="btn btn-primary" ng-click="controller.close()">Cancel</button>
-  <button clas="btn btn-primary" ng-click="controller.editCourse()">Save</button>
+</div>
 
+<div class="modal-footer">
+  <button class="custom-btn custom-btn-go ripple" ng-click="controller.editCourse()">Save</button>
+  <button class="custom-btn custom-btn-default ripple" ng-click="controller.close()">Cancel</button>
 </div>

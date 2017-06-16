@@ -3,27 +3,27 @@
     <div class="wrapper" style="padding: 0">
       <div class="col-xs-12" style="padding: 0">
         <ul>
-          <li class="eachCourse"  ng-repeat="course in controller.courses" style="width: 360px">
+          <li class="eachCourse"  ng-repeat="course in controller.courses" style="width: 360px" ng-if="!controller.administrator && course.isEnabled || controller.administrator ">
             <div class="box-outer">
               <div class="box-inner">
 
                 <div class="course-controls">
                   <div class="row">
 
-                    <div class="col-xs-4">
+                    <div class="col-xs-4"  ng-if="controller.administrator">
                       <label class="switch">
                         <input type="checkbox" ng-checked={{course.isEnabled}}>
                         <div class="slider round" ng-click="controller.courseActivation(course)"></div>
                       </label>
                     </div>
 
-                    <div class="col-xs-4">
+                    <div class="col-xs-4"  ng-if="controller.administrator">
                       <button class="custom-btn-utility custom-btn-utility-info" ng-click="controller.showEditModalCourse(course)">
                         <i class="fa fa-pencil aOnlyAgain" aria-hidden="true"></i>
                       </button>
                     </div>
 
-                    <div class="col-xs-4">
+                    <div class="col-xs-4"  ng-if="controller.administrator">
                       <button class="custom-btn-utility custom-btn-utility-stop" ng-click="controller.delete(course)">
                         <i class="fa fa-trash" aria-hidden="true"></i>
                       </button>
@@ -57,11 +57,11 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row"  ng-if="controller.administrator">
     <div class="col-xs-12" id="addCourse">
       <input type="text" ng-model="controller.newCourse.name" placeholder="Add New Course Here">
-      <button class="custom-btn-utility custom-btn-utility-go ripple">
-        <i class="fa fa-plus-square" id="addCourseButton" aria-hidden="true" ng-click="controller.addCourse()"></i>
+      <button class="custom-btn-utility custom-btn-utility-go ripple" ng-click="controller.addCourse()">
+        <i class="fa fa-plus-square" id="addCourseButton" aria-hidden="true"></i>
       </button>
     </div>
   </div>

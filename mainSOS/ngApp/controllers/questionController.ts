@@ -11,15 +11,22 @@ namespace mainsos.Controllers {
       clickCount: 0,
       userId: '',
       qCodeLink: ''
-    }
+    };
+    public administrator = false;
 
     constructor(private lessonServices, private questionService, private $stateParams, private $state, private $uibModal) {
-      console.log($stateParams.id);
+      this.checkAccess();
       lessonServices.getOne($stateParams.id).then((data) => {
           this.lesson = data;
           this.listQuestions();
-          console.log(this.questions);
         })
+    }
+
+    public checkAccess(){
+      let x = sessionStorage.getItem('role');
+      if( x == 'admin'){
+        this.administrator = true;
+      }
     }
 
     public listQuestions() {

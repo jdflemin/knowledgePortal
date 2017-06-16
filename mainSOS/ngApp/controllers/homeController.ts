@@ -12,11 +12,22 @@ namespace mainsos.Controllers {
         name: '',
         icon: '',
         isEnabled: true
-      }
+      };
+      public administrator = false;
+
 
       constructor(public courseServices, public $window, public $state, private $uibModal){
+        this.checkAccess();
         this.courses = courseServices.getAll();
       }
+
+      public checkAccess(){
+        let x = sessionStorage.getItem('role');
+        if( x == 'admin'){
+          this.administrator = true;
+        }
+      }
+
 
       public delete(course){
         this.course = this.courseServices.delete(course._id).then(() => this.listCourses());

@@ -7,14 +7,14 @@
               <h4 class="questionTitle" style="text-align: left">{{controller.question.qTitle}}</h4>
           </div>
           <div class="col-xs-3">
-            <button class="custom-btn-utility custom-btn-utility-info ripple" ng-click="controller.showEditQuestionModal(question._id)">
+            <button class="custom-btn-utility custom-btn-utility-info ripple" ng-click="controller.showEditQuestionModal(question._id)" ng-if="controller.administrator">
               <i class="fa fa-pencil"></i>
             </button>
           </div>
         </div>
         <div class="cardBody">
           <p>{{controller.question.qContent}}</p>
-          <a href="{{controller.question.qCodeLink}}"><h5 style="padding: 10px">{{controller.question.qCodeLink}}</h5></a>
+          <a href="{{controller.question.qCodeLink}}" target="_black"><h5 style="padding: 10px">{{controller.question.qCodeLink}}</h5></a>
         </div>
       </div>
       <div class="answers">
@@ -39,10 +39,10 @@
                       <button class="custom-btn custom-btn-go ripple replyButton" ng-click="controller.answerComments(answer._id)">Reply</button>
                     </div>
                       <div class="col-xs-2 footer2">
-                      <button class="custom-btn-utility custom-btn-utility-info ripple" ng-click="controller.showEditAnswerModal(answer)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button class="custom-btn-utility custom-btn-utility-info ripple" ng-click="controller.showEditAnswerModal(answer)" ng-if="controller.administrator"><i class="fa fa-pencil" aria-hidden="true"></i></button>
                     </div>
                     <div class="col-xs-2 footer2">
-                      <button class="custom-btn-utility custom-btn-utility-stop ripple" ng-click="controller.deleteAnswer(answer._id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                      <button class="custom-btn-utility custom-btn-utility-stop ripple" ng-click="controller.deleteAnswer(answer._id)" ng-if="controller.administrator"><i class="fa fa-trash" aria-hidden="true"></i></button>
                     </div>
                     <div class="col-xs-4 footer3">
                       {{answer.aDate | date:'MM/dd/yyyy h:mma'}}
@@ -56,12 +56,12 @@
                             {{comment.cContent}}
                             </div>
                             <div class="col-xs-2">
-                              <button class="custom-btn-utility custom-btn-utility-info ripple" ng-click="controller.updateComment(comment, answer._id)">
+                              <button class="custom-btn-utility custom-btn-utility-info ripple" ng-click="controller.updateComment(comment, answer._id)" ng-if="controller.administrator">
                                 <i class="fa fa-pencil" aria-hidden="true"></i>
                               </button>
                             </div>
                             <div class="col-xs-2">
-                              <button class="custom-btn-utility custom-btn-utility-stop ripple" ng-click="controller.deleteComment(comment._id, answer._id)">
+                              <button class="custom-btn-utility custom-btn-utility-stop ripple" ng-click="controller.deleteComment(comment._id, answer._id)" ng-if="controller.administrator">
                                 <i class="fa fa-trash" aria-hidden="true"></i>
                               </button>
                             </div>

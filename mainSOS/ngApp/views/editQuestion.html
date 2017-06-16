@@ -3,26 +3,17 @@
 </div>
 
 <div class="modal-body">
-  <form class="form-group">
-    <div class="form-group">
-      <h3 ng-model="controller.question.qTitle"></h3>
-      <label>Question Title:</label>
-      <input ng-model="controller.questions.qTitle" />
-    </div>
-    
-      <div class="form-group">
-      <label>Code Link:</label>
-      <input ng-model="controller.questions.qCodeLink" />
-    </div>
+  <h4>Question Title:</h4>
+  <input ng-model="controller.questions.qTitle" placeholder="Question title..."/>
 
-    <div class="form-group">
-      <h3 ng-model="controller.questions.qContent"></h3>
-      <label>Content:</label>
-      <input ng-model="controller.questions.qContent" />
-    </div>
+  <h4>Code Link:</h4>
+  <input ng-model="controller.questions.qCodeLink" placeholder="Code link..."/>
 
-    <div class="form-group">
-      <button type="button" ng-click="controller.editQuestion()">Save</button>
-    </div>
-  </form>
+  <h4>Content:</h4>
+  <input ng-model="controller.questions.qContent" placeholder="Question content..."/>
+</div>
+
+<div class="modal-footer">
+  <button class="custom-btn custom-btn-go ripple" ng-click="controller.editQuestion()">Save</button>
+  <button class="custom-btn custom-btn-default ripple" ng-click="controller.close()">Close</button>
 </div>
